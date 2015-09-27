@@ -1,0 +1,17 @@
+<div id="wrapper">
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>scenarios#show</h1>
+          <% if not @scenario.nil? %>
+          <h3><%= @scenario.name %></h3>
+          <h3><%= @scenario.description%></h3>
+          <% else %>
+          <h3>Scenario not found</h3>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
