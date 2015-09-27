@@ -1,0 +1,48 @@
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+    <% @scenario.levels.each do |level| %>
+    <li class="active">
+      <a href="#">
+        <span class="fa-stack fa-lg pull-left">
+          <i class="fa fa-dashboard fa-stack-1x "></i>
+        </span>Level <%= level.number %>
+      </a>
+      <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+      <% level.challenges.each do |challenge| %>
+        <li><a href="#">Challenge <%= challenge.number %></a></li>
+      <% end %>
+      </ul>
+    </li>
+    <% end %>
+    <li>
+      <a href="#">
+        <span class="fa-stack fa-lg pull-left">
+          <i class="fa fa-server fa-stack-1x "></i>
+        </span>Account
+      </a>
+      <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+        <li>
+          <a href="#">
+            <span class="fa-stack fa-lg pull-left">
+              <i class="fa fa-flag fa-stack-1x "></i>
+            </span>Progress
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="fa-stack fa-lg pull-left">
+              <i class="fa fa-flag fa-stack-1x "></i>
+            </span>Logout
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">
+        <span class="fa-stack fa-lg pull-left">
+          <i class="fa fa-wrench fa-stack-1x "></i>
+        </span>Help
+      </a>
+    </li>
+  </ul>
+</div>
