@@ -14,10 +14,7 @@ Rails.application.routes.draw do
 
   resources :scenarios do
     resources :levels do
-      resources :challenges do
-        resources :answer
-        resources :hints
-      end
+      resources :challenges
     end
   end
 
