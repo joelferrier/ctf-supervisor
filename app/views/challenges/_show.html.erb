@@ -1,0 +1,27 @@
+<div id="challenge">
+  <div id="challenge" class="card">
+    <h3 class="card-heading simple"><%= @challenge.name %></h3>
+    <div class="card-body">
+      <h3><%= @challenge.description %></h3>
+      <h3><%= @challenge.points %></h3>
+      <h3><%= @challenge.number %></h3>
+    </div>
+  </div>
+  <% hint_num = 0 %>
+  <% @challenge.hints.each do |hint| %>
+  <div class="card">
+    <h3 class="card-heading simple">Hint <%= hint_num%></h3>
+    <div class="card-body">
+    <h3><%= hint.points%></h3>
+    <h3><%= hint.message %></h3>
+    </div>
+  </div>
+  <% end %>
+  <div class="card">
+    <h3 class="card-heading simple">Answer</h3>
+    <div class="card-body">
+    <%= @challenge.answer.solution %>
+    </div>
+  </div>
+</div>
+
