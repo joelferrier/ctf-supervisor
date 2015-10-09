@@ -55,6 +55,12 @@ $red: red;
     li {
         text-indent: 15px;
         line-height: 40px;
+        span {
+            display: block;
+            text-decoration: none;
+            color: $white;
+            background: $white_20;
+        }
         a {
             display: block;
             text-decoration: none;
