@@ -1,5 +1,8 @@
 <div id="sidebar-wrapper">
   <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+    <li>
+      <span><%= @scenario.name %></span>
+    </li>
     <% @scenario.levels.each do |level| %>
     <li class="active">
       <a href="#">
@@ -9,7 +12,7 @@
       </a>
       <ul class="nav-pills nav-stacked" style="list-style-type:none;">
       <% level.challenges.each do |challenge| %>
-        <li><a href="#">Challenge <%= challenge.number %></a></li>
+        <li><%= link_to "Challenge #{challenge.number}", scenario_level_challenge_path(@scenario, level, challenge), method: :get, remote: :true %>
       <% end %>
       </ul>
     </li>
@@ -18,31 +21,24 @@
       <a href="#">
         <span class="fa-stack fa-lg pull-left">
           <i class="fa fa-server fa-stack-1x "></i>
-        </span>Account
+        </span>Help
       </a>
       <ul class="nav-pills nav-stacked" style="list-style-type:none;">
         <li>
           <a href="#">
             <span class="fa-stack fa-lg pull-left">
               <i class="fa fa-flag fa-stack-1x "></i>
-            </span>Progress
+            </span>FAQ
           </a>
         </li>
         <li>
           <a href="#">
             <span class="fa-stack fa-lg pull-left">
               <i class="fa fa-flag fa-stack-1x "></i>
-            </span>Logout
+            </span>Chat
           </a>
         </li>
       </ul>
-    </li>
-    <li>
-      <a href="#">
-        <span class="fa-stack fa-lg pull-left">
-          <i class="fa fa-wrench fa-stack-1x "></i>
-        </span>Help
-      </a>
     </li>
   </ul>
 </div>
