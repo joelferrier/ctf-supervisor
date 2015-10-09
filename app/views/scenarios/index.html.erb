@@ -1,9 +1,25 @@
+<%= render "shared/navbar" %>
 <div id="wrapper">
   <div id="page-content-wrapper">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1>scenarios#index</h1>
+    <div class="container">
+      <div class="col-lg-12">
+        <div class="row">
+          <% 8.times do %>
+          <% @scenarios.each do |scenario| %>
+          <div class="span4">
+            <div class="card">
+              <h3 class="card-heading simple"><%= scenario.name %></h3>
+              <div class="card-body">
+                <%= scenario.description %>
+              </div>
+              <div class="card-action">
+                <%= button_to "Begin", scenario_path(scenario), method: :get, class: "btn btn-block" %>
+                <!-- class: "btn btn-primary"-->
+              </div>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
         <div>
       <div>
     <div>
